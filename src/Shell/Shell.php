@@ -83,6 +83,7 @@ class Shell implements ShellInterface
 
             $process->execute();
         } catch (ProcessException $e) {
+            $this->handleOutput($process);
             throw new ShellException(
                 $this->sanitizer->sanitize($e->getMessage()),
                 $e->getCode()
@@ -90,7 +91,6 @@ class Shell implements ShellInterface
         }
 
         $this->handleOutput($process);
-
         return $process;
     }
 
