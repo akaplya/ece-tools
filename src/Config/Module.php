@@ -44,6 +44,8 @@ class Module
      */
     public function refresh(): array
     {
+        return [];
+
         $moduleConfig = (array)$this->config->get('modules');
 
         $this->magentoShell->execute('module:enable --all -vvv');
