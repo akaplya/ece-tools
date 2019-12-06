@@ -46,7 +46,7 @@ class Module
     {
         $moduleConfig = (array)$this->config->get('modules');
 
-        $this->magentoShell->execute('module:enable --all');
+        $this->magentoShell->execute('module:enable --all -vvv');
 
         $this->config->reset();
 
